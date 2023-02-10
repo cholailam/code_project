@@ -8,11 +8,11 @@ print('1) not correct number and position')
 print('2) correct number but not correct position')
 print('3) both correct number & position')
 print()
-print('(1-9 and not repeatable)')
+print('(0-9 and not repeatable)')
 print()
 
 ans=random.sample(string.digits,4)
-ans=list(map(int,ans))
+
 
 check=[]
 
@@ -41,11 +41,10 @@ def indict():
 
 #print(ans)
 
-chance=20
+chance=10
 guess=list(input('Guess(1234): '))
 
 while guess:
-    guess=list(map(int,guess))
     check_vali()
     indict()
     if guess==ans:
@@ -57,7 +56,9 @@ while guess:
         print('You still have', chance,'chance. ')
     else:
         print('Oh no~')
+        print('Chances use up')
+        print('THe correct answer is', ''.join(ans))
         print('Game over );')
         break
     print()
-    guess=list(input('Guess(1 2 3 4): '))
+    guess=list(input('Guess(1234): '))
