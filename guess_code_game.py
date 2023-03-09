@@ -16,6 +16,15 @@ ans=random.sample(string.digits,4)
 
 check=[]
 
+def check_in(x):
+    global guess
+    if len(x) != 4:
+        print('Please input 4 numbers')
+        guess=list(input('Guess(1234): '))
+
+    elif len(x)!=len(set(x)):
+        print('The numbers should not be repeated')
+        guess=list(input('Guess(1234): '))
 
 
 def check_vali():
@@ -45,6 +54,7 @@ chance=10
 guess=list(input('Guess(1234): '))
 
 while guess:
+    check_in(guess)
     check_vali()
     indict()
     if guess==ans:
